@@ -1,0 +1,25 @@
+
+			
+			<center><table border="0" align="center">
+				{if $current_artist}
+				<tr><td><b>Artysta:</b></td><td> &nbsp;{$current_artist}</td></tr>
+				<tr><td><b>Tytuł:</b></td><td> {$current_title}</td></tr>
+				<tr><td><b>Album:</b></td><td> {$current_album}</td></tr>
+				<tr><td><b>Pozycja:</b></td><td> &nbsp;{$mpd_position} sec</td></tr>
+				{/if}
+				<tr><td><b>Głośność:</b></td><td> &nbsp;{$mpd_volume}%</td></tr>
+			</table>
+				</center>
+			
+			<br/>
+
+			{if $playlist}
+			<ul class="list">
+				{foreach from=$playlist item=playlist_item}
+					{include file="default/playlist_item.html"}
+				{/foreach}
+			</ul>
+			{else}
+			<p>(Empty playlist)</p>
+			{/if}
+
